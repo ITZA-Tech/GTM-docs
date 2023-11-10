@@ -3,7 +3,7 @@
 Utilizado para enviar eventos ao clicar sobre algum componente. Funciona em componentes renderizados no servidor ou em Islands.
 
 ```tsx
-import { sendEvent } from "..."; // Veja mais em "eventos/sendEvent.md"
+import { sendEvent } from "$store/sdk/analytics.tsx";
 import type { AnalyticsEvent } from "apps/commerce/types.ts";
 
 export const SendEventOnLoad = <E extends AnalyticsEvent>({ event, id }: {

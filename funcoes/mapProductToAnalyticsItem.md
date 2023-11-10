@@ -18,6 +18,8 @@ Função utilizada para transformar o objeto do produto em Item compatível com 
 
 ```js
 // ProductShelf.tsx
+import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
+
 <SendEventOnLoad
   event={{
     name: "view_item_list",
