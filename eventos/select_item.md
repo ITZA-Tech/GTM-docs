@@ -16,7 +16,7 @@ Definição do tipo `Item` utilizado no parâmetro `items` do evento `select_ite
 
 | Nome | Tipo | Obrigatório | Exemplo | Descrição |
 |---|---|---|---|---|
-| item_id | string | Sim&#42;| SKU_12345 | ID do item.<br>&#42; preciso especificar item_id ou item_name.|
+| item_id | string | Sim&#42;| 12345_67890 (skuID_productID) | ID do sku + ID do produto.<br>&#42; É preciso especificar item_id ou item_name.|
 | item_name | string | Sim&#42;| Camiseta Stan and Friends | Nome do item.<br>&#42;É preciso especificar item_id ou item_name.|
 | affiliation | string | Não | Store | Uma afiliação de produto para indicar uma empresa fornecedora ou loja física. <br>Observação: "affiliation" está disponível apenas no escopo do item.|
 | coupon | string | Não | SUMMER_FUN | Nome/código do cupom associado ao item. Os parâmetros coupon no nível do evento e do item são independentes. |
@@ -51,7 +51,7 @@ sendEvent({
     item_list_name: "Related products",
     items: [
       {
-        item_id: "SKU_12345",
+        item_id: "12345_67890 (skuID_productID)",
         item_name: "Stan and Friends Tee",
         affiliation: "Merchandise Store",
         coupon: "SUMMER_FUN",
