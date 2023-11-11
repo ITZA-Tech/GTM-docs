@@ -1,6 +1,6 @@
 # SendEventOnLoad
 
-Utilizado para enviar eventos ao clicar sobre algum componente. Funciona em componentes renderizados no servidor ou em Islands.
+Utilizado para enviar eventos ao carregar uma página. Funciona em componentes renderizados no servidor ou em Islands.
 
 ```tsx
 import { sendEvent } from "$store/sdk/analytics.tsx";
