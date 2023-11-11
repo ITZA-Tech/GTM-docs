@@ -49,8 +49,6 @@ sendEvent({
   params: {
     currency: "BRL",
     value: 7.77,
-    coupon: "SUMMER_FUN",
-    shipping_tier: "Ground",
     items: [
       {
         item_id: "12345_67890 (skuID_productID)",
