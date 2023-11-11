@@ -6,7 +6,7 @@ Esse evento indica que um usuário viu o carrinho.
 
 | Nome | Tipo | Obrigatório | Exemplo | Descrição |
 |---|---|---|---|---|
-| currency | string | Sim&#42; | BRL | Moeda dos itens associados ao evento, no [formato ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) de três letras.<br>&#42; Se você definir `value`, será necessário user o parâmetro currency para que as métricas de receita sejam calculadas corretamente. |
+| currency | string | Sim&#42; | BRL | Moeda dos itens associados ao evento, no [formato ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) de três letras.<br>&#42; Se você definir `value`, será necessário usar o parâmetro currency para que as métricas de receita sejam calculadas corretamente. |
 | value | number | Sim&#42; | 7.77 | Valor monetário do evento.<br>&#42; O parâmetro `value` costuma ser necessário para gerar relatórios importantes. Se você [marca o evento como uma conversão](https://support.google.com/analytics/answer/9267568?hl=pt-br), é recomendável definir `value`.<br>&#42; O parâmetro `currency` é obrigatório quando você define `value`. |
 | items | [Array&#60;Item&#62;](#item) | Sim |  | Itens do evento. |
 
