@@ -6,27 +6,37 @@ Utilizado para enviar eventos ao clicar sobre algum componente. Funciona em comp
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import type { AnalyticsEvent } from "apps/commerce/types.ts";
 
-export const SendEventOnClick = <E extends AnalyticsEvent>({ event, id }: {
-  event: E;
+type Props = {
+  event: AnalyticsEvent;
   id: string;
-}) => (
-  <script
-    type="module"
-    dangerouslySetInnerHTML={{
-      __html:
-        `addEventListener("load", () => {const element = document.getElementById("${id}"); element && element.addEventListener("click", () => (${sendEvent})(${
-          JSON.stringify(event)
-        }));})`,
-    }}
-  />
-);
+};
+
+const script = ({ event, id }: Props) => `
+addEventListener("load", () => {
+  const element = document.getElementById("${id}");
+  if (!element) return;
+  
+  element.addEventListener("click", () => {
+    (${sendEvent})(${JSON.stringify(event)})
+  });
+});
+`;
+
+export function SendEventOnClick(props: Props) {
+  return (
+    <script
+      type="module"
+      dangerouslySetInnerHTML={{ __html: script(props) }}
+    />
+  );
+}
 ```
 
 ## Exemplo
 
 ```tsx
 <SendEventOnClick
-  id={id} // ID do componente que será clicado
+  id={id}
   event={{
     name: "nome_do_evento",
     params: {...}, // Parâmetros do evento

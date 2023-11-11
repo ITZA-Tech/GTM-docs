@@ -6,21 +6,22 @@ Utilizado para enviar eventos ao carregar uma página. Funciona em componentes r
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import type { AnalyticsEvent } from "apps/commerce/types.ts";
 
-export const SendEventOnLoad = <E extends AnalyticsEvent>({ event, id }: {
-  event: E;
-  id: string;
-}) => (
-  <script
-    type="module"
-    dangerouslySetInnerHTML={{
-      __html: `addEventListener("load", () => (${sendEvent})(${
-        JSON.stringify(
-          event,
-        )
-      }))`,
-    }}
-  />
-);
+type Props = {
+  event: AnalyticsEvent;
+}
+
+const script = ({ event }: Props) => `
+addEventListener("load", () => (${sendEvent})(${JSON.stringify(event)}));
+`;
+
+export function SendEventOnLoad(props: Props) {
+  return (
+    <script
+      type="module"
+      dangerouslySetInnerHTML={{ __html: script(props) }}
+    />
+  );
+}
 ```
 
 ## Exemplo
