@@ -6,6 +6,7 @@ A documentação oferece um guia para entender sobre os eventos do GTM, incluind
 
 1. [Componentes](componentes/)
    - [SendEventOnClick](componentes/SendEventOnClick.md)
+   - [SendEventOnIntersection](componentes/SendEventOnIntersection.md)
    - [SendEventOnLoad](componentes/SendEventOnLoad.md)
 2. [Funções](funcoes/)
    - [mapProductToAnalyticsItem](funcoes/mapProductToAnalyticsItem.md)
