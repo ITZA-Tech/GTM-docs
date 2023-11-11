@@ -32,6 +32,12 @@ export function SendEventOnClick(props: Props) {
 }
 ```
 
+## Parâmetros adicionais
+
+| Nome | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| id | string | Sim | ID do componente que acionará o evento ao ser clicado. |
+
 ## Exemplo
 
 ```tsx
